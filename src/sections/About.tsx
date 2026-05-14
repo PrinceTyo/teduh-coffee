@@ -7,7 +7,9 @@ export default function About() {
       id="about"
     >
       <div className="w-1/2 space-y-6">
-        <p className="uppercase text-primary font-medium">Our Story</p>
+        <p className="uppercase tracking-[0.3em] text-sm font-medium text-primary">
+          Our Story
+        </p>
         <h1 className="text-5xl font-semibold">
           Made with Heart, Served with Love
         </h1>

@@ -1,8 +1,17 @@
 import { Separator } from "@/components/ui/separator";
+import bijiKopiImage from "@/assets/about.png";
 
 export default function Features() {
   return (
-    <section className="px-4 py-20 lg:px-20 text-center bg-white" id="features">
+    <section
+      className="relative px-4 py-20 lg:px-20 text-center bg-white"
+      id="features"
+    >
+      <img
+        src={bijiKopiImage}
+        alt="Second About Image"
+        className="absolute w-30 top-20 -left-8 rotate-40"
+      />
       <h1 className="text-5xl font-bold">Crafted for You</h1>
       <div className="grid grid-cols-2 lg:grid-cols-4 mt-16 gap-10">
         <div className="relative flex flex-col items-center text-center">
