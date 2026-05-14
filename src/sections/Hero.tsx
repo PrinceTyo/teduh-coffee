@@ -13,13 +13,13 @@ export default function Hero() {
     >
       <div className="absolute inset-0 bg-black/35"></div>
 
-      <div className="relative lg:max-w-1/2 flex flex-col items-center text-center lg:text-start lg:items-start">
+      <div className="relative lg:max-w-2/3 flex flex-col items-center text-center lg:text-start lg:items-start">
         <span className="uppercase tracking-[0.3em] text-sm text-secondary font-medium">
           Welcome to Teduh Coffee
         </span>
 
-        <h1 className="mt-4 text-white text-4xl md:text-6xl font-black leading-tight">
-          Temukan Teduh Dalam
+        <h1 className="mt-4 text-white text-4xl md:text-6xl font-bold leading-tight">
+          Temukan Teduh Pada
           <br />
           Setiap Tegukan
         </h1>
