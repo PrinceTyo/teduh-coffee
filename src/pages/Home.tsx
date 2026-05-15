@@ -1,4 +1,5 @@
 import About from "@/sections/About";
+import Cta from "@/sections/Cta";
 import Features from "@/sections/Features";
 import Hero from "@/sections/Hero";
 import Philosophy from "@/sections/Philosophy";
@@ -9,6 +10,7 @@ export default function Home() {
     <>
       <Hero />
       <Features />
+      <Cta />
       <About />
       <Reason />
       <Philosophy />
