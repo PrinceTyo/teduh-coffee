@@ -19,7 +19,7 @@ export default function Navbar() {
     <nav
       className={`
         fixed w-full z-50 top-0 left-0 transition-all duration-300
-        ${scrolled ? "bg-white shadow-md" : "bg-transparent"}
+        ${scrolled ? "bg-secondary shadow-md" : "bg-transparent"}
       `}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
@@ -30,7 +30,7 @@ export default function Navbar() {
               scrolled ? "text-black" : "text-white"
             }`}
           >
-            TerraHive
+            Teduh Coffee
           </span>
         </a>
 
@@ -46,7 +46,7 @@ export default function Navbar() {
         <div
           className={`
             absolute md:static top-full left-0 w-full md:w-auto
-            ${scrolled ? "bg-white" : "bg-primary md:bg-transparent"}
+            ${scrolled ? "bg-secondary" : "bg-primary md:bg-transparent"}
             transition-all duration-300 overflow-hidden
             ${
               isOpen
