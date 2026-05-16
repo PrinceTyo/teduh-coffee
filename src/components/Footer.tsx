@@ -1,189 +1,169 @@
-import {
-  FaWhatsapp,
-  FaInstagram,
-  FaFacebook,
-  FaPinterest,
-} from "react-icons/fa";
-import { RiTwitterXFill } from "react-icons/ri";
 import { Separator } from "@/components/ui/separator";
-import logoImage from "../assets/logo.png";
 
-export default function Footer() {
+type Brand = {
+  logo: string;
+  title: string;
+  description: string;
+  socials: Social[];
+};
+
+type Social = {
+  icon: React.ElementType;
+  link: string;
+};
+
+type OpeningHours = {
+  day: string;
+  time: string;
+};
+
+type contactInfo = {
+  address: string;
+  phone: string;
+  email: string;
+  website: string;
+  instagram: string;
+};
+
+type QuickLinks = {
+  name: string;
+  link: string;
+};
+
+type Policies = {
+  name: string;
+  link: string;
+};
+
+type FooterProps = {
+  brand: Brand;
+  openingHours: OpeningHours[];
+  contactInfo: contactInfo;
+  quickLinks: QuickLinks[];
+  copyright: string;
+  policies: Policies[];
+};
+
+export default function Footer({
+  brand,
+  openingHours,
+  contactInfo,
+  quickLinks,
+  copyright,
+  policies,
+}: FooterProps) {
   return (
     <footer className="bg-primary px-4 py-20 md:px-20 space-y-10 text-white">
-      <div className="grid grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-4 lg:grid-rows-1 justify-between gap-10 md:gap-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-20">
+        {/* Brand */}
         <div className="space-y-3">
           <div className="flex items-center gap-x-2">
-            <img src={logoImage} alt="Logo" className="h-16" />
-            <h1 className="font-semibold text-3xl">Teduh Coffee</h1>
+            <img src={brand.logo} alt="Logo" className="h-16" />
+
+            <h1 className="font-semibold text-3xl">{brand.title}</h1>
           </div>
-          <blockquote className="italic">
-            Teduh Coffee menghadirkan ruang hangat untuk menikmati kopi, berbagi
-            cerita, Hadir untuk menemani setiap momen kamu dan menemukan
-            ketenangan dalam setiap tegukan.
-          </blockquote>
-          <div className="flex items-center gap-x-2">
-            <a href="">
-              <FaWhatsapp size={22} />
-            </a>
-            <a href="">
-              <FaInstagram size={22} />
-            </a>
-            <a href="">
-              <FaFacebook size={22} />
-            </a>
-            <a href="">
-              <FaPinterest size={22} />
-            </a>
-            <a href="">
-              <RiTwitterXFill size={22} />
-            </a>
+
+          <blockquote className="italic">{brand.description}</blockquote>
+
+          <div className="flex items-center gap-x-3">
+            {brand.socials.map((social, index) => {
+              const Icon = social.icon;
+
+              return (
+                <a key={index} href={social.link}>
+                  <Icon size={22} />
+                </a>
+              );
+            })}
           </div>
         </div>
+
+        {/* Opening Hours */}
         <div className="space-y-3">
           <h1 className="text-2xl font-semibold mb-4">Opening Hours</h1>
 
           <div className="space-y-1">
-            <dl className="flex items-center gap-3">
-              <dt>Monday</dt>
-              <Separator className="flex-1 bg-white/20" />
-              <dd className="text-white/80">08.00 - 22.00</dd>
-            </dl>
+            {openingHours.map((item) => (
+              <dl key={item.day} className="flex items-center gap-3">
+                <dt>{item.day}</dt>
 
-            <dl className="flex items-center gap-3">
-              <dt>Tuesday</dt>
-              <Separator className="flex-1 bg-white/20" />
-              <dd className="text-white/80">08.00 - 22.00</dd>
-            </dl>
+                <Separator className="flex-1 bg-white/20" />
 
-            <dl className="flex items-center gap-3">
-              <dt>Wednesday</dt>
-              <Separator className="flex-1 bg-white/20" />
-              <dd className="text-white/80">08.00 - 22.00</dd>
-            </dl>
-
-            <dl className="flex items-center gap-3">
-              <dt>Thursday</dt>
-              <Separator className="flex-1 bg-white/20" />
-              <dd className="text-white/80">08.00 - 22.00</dd>
-            </dl>
-
-            <dl className="flex items-center gap-3">
-              <dt>Friday</dt>
-              <Separator className="flex-1 bg-white/20" />
-              <dd className="text-white/80">08.00 - 23.00</dd>
-            </dl>
-
-            <dl className="flex items-center gap-3">
-              <dt>Saturday</dt>
-              <Separator className="flex-1 bg-white/20" />
-              <dd className="text-white/80">09.00 - 23.00</dd>
-            </dl>
-
-            <dl className="flex items-center gap-3">
-              <dt>Sunday</dt>
-              <Separator className="flex-1 bg-white/20" />
-              <dd className="text-white/80">CLOSED</dd>
-            </dl>
+                <dd className="text-white/80">{item.time}</dd>
+              </dl>
+            ))}
           </div>
         </div>
+
+        {/* Contact Info */}
         <div className="space-y-3">
           <h1 className="text-2xl font-semibold mb-4">Contact Info</h1>
-          <p className="text-md text-white/80">
-            Jl. Ijen Boulevard No. 12, Banyuwangi, Indonesia
-          </p>
-          <p className="text-md text-white/80">+62 881-1661-7171</p>
-          <p>
-            <a
-              href=""
-              className="text-md cursor-pointer hover:text-secondary transition duration-300"
-            >
-              teduhcoffee@gmail.com
-            </a>
-          </p>
-          <p>
-            <a
-              href=""
-              className="text-md cursor-pointer hover:text-secondary transition duration-300"
-            >
-              www.teduhcoffee.com
-            </a>
-          </p>
-          <p>
-            <a
-              href=""
-              className="text-md cursor-pointer hover:text-secondary transition duration-300"
-            >
-              @teduhcoffee
-            </a>
-          </p>
-        </div>
-        <div className="space-y-3">
-          <h1 className="text-2xl font-semibold mb-4">Nusa Trip</h1>
+
+          <p className="text-md text-white/80">{contactInfo.address}</p>
+
+          <p className="text-md text-white/80">{contactInfo.phone}</p>
+
           <p>
             <a
               href="#"
               className="text-md cursor-pointer hover:text-secondary transition duration-300"
             >
-              Home
+              {contactInfo.email}
             </a>
           </p>
+
           <p>
             <a
-              href="#about"
+              href="#"
               className="text-md cursor-pointer hover:text-secondary transition duration-300"
             >
-              About
+              {contactInfo.website}
             </a>
           </p>
+
           <p>
             <a
-              href="#reason"
+              href="#"
               className="text-md cursor-pointer hover:text-secondary transition duration-300"
             >
-              Reason
-            </a>
-          </p>
-          <p>
-            <a
-              href="#reason"
-              className="text-md cursor-pointer hover:text-secondary transition duration-300"
-            >
-              Philosophy
-            </a>
-          </p>
-          <p>
-            <a
-              href="#menu"
-              className="text-md cursor-pointer hover:text-secondary transition duration-300"
-            >
-              Menu
+              {contactInfo.instagram}
             </a>
           </p>
         </div>
+
+        {/* Quick Links */}
+        <div className="space-y-3">
+          <h1 className="text-2xl font-semibold mb-4">Quick Links</h1>
+
+          {quickLinks.map((link) => (
+            <p key={link.name}>
+              <a
+                href={link.link}
+                className="text-md cursor-pointer hover:text-secondary transition duration-300"
+              >
+                {link.name}
+              </a>
+            </p>
+          ))}
+        </div>
       </div>
+
       <Separator />
-      <div className="flex flex-col md:flex-row items-start lg:items-center justify-between text-lg md:text-md">
-        <p className="text-white/80 w-full md:w-3/4 lg:w-full">
-          © 2024 Teduh Coffee Shop. All rights reserved.
-        </p>
-        <div className="flex items-center justify-start md:justify-end gap-x-3 w-full">
-          <p>
-            <a
-              href=""
-              className="cursor-pointer hover:text-secondary transition duration-300"
-            >
-              Privacy Policy
-            </a>
-          </p>
-          <p>
-            <a
-              href=""
-              className="cursor-pointer hover:text-secondary transition duration-300"
-            >
-              Terms of Use
-            </a>
-          </p>
+
+      <div className="flex flex-col md:flex-row items-start lg:items-center justify-between text-lg md:text-md gap-3">
+        <p className="text-white/80">{copyright}</p>
+
+        <div className="flex items-center gap-x-3">
+          {policies.map((policy) => (
+            <p key={policy.name}>
+              <a
+                href={policy.link}
+                className="cursor-pointer hover:text-secondary transition duration-300"
+              >
+                {policy.name}
+              </a>
+            </p>
+          ))}
         </div>
       </div>
     </footer>

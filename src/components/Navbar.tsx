@@ -1,9 +1,20 @@
 import { useEffect, useState } from "react";
-import logoImage from "@/assets/logo.png";
 import { RxHamburgerMenu } from "react-icons/rx";
 
-export default function Navbar() {
+type NavItem = {
+  title: string;
+  href: string;
+};
+
+type NavbarProps = {
+  logo: string;
+  brand: string;
+  navItems: NavItem[];
+};
+
+export default function Navbar({ logo, brand, navItems }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
+
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -12,6 +23,7 @@ export default function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -24,21 +36,14 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
         <a href="#" className="flex items-center gap-2">
-          <img src={logoImage} className="h-12" alt="Logo" />
-          <span
-            className={`text-xl font-semibold ${
-              scrolled ? "text-white" : "text-white"
-            }`}
-          >
-            Teduh Coffee
-          </span>
+          <img src={logo} className="h-12" alt="Logo" />
+
+          <span className="text-xl font-semibold text-white">{brand}</span>
         </a>
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`md:hidden p-2 rounded-lg transition ${
-            scrolled ? "text-white" : "text-white"
-          }`}
+          className="md:hidden p-2 rounded-lg transition text-white"
         >
           <RxHamburgerMenu className="w-6 h-6" />
         </button>
@@ -56,81 +61,23 @@ export default function Navbar() {
           `}
         >
           <ul className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 p-4 md:p-0">
-            <li>
-              <a
-                href="#"
-                className={`
-                      block py-2 px-4 rounded-md transition
-                      ${
-                        scrolled
-                          ? "text-white hover:bg-secondary hover:text-black transition duration-300"
-                          : "text-white hover:bg-white/10 md:hover:bg-primary md:hover:text-white transition duration-300"
-                      }
-                    `}
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#about"
-                className={`
-                      block py-2 px-4 rounded-md transition
-                      ${
-                        scrolled
-                          ? "text-white hover:bg-secondary hover:text-black transition duration-300"
-                          : "text-white hover:bg-white/10 md:hover:bg-primary md:hover:text-white transition duration-300"
-                      }
-                    `}
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href="#reason"
-                className={`
-                      block py-2 px-4 rounded-md transition
-                      ${
-                        scrolled
-                          ? "text-white hover:bg-secondary hover:text-black transition duration-300"
-                          : "text-white hover:bg-white/10 md:hover:bg-primary md:hover:text-white transition duration-300"
-                      }
-                    `}
-              >
-                Reason
-              </a>
-            </li>
-            <li>
-              <a
-                href="#philosophy"
-                className={`
-                      block py-2 px-4 rounded-md transition
-                      ${
-                        scrolled
-                          ? "text-white hover:bg-secondary hover:text-black transition duration-300"
-                          : "text-white hover:bg-white/10 md:hover:bg-primary md:hover:text-white transition duration-300"
-                      }
-                    `}
-              >
-                Philosophy
-              </a>
-            </li>
-            <li>
-              <a
-                href="#menu"
-                className={`
-                      block py-2 px-4 rounded-md transition
-                      ${
-                        scrolled
-                          ? "text-white hover:bg-secondary hover:text-black transition duration-300"
-                          : "text-white hover:bg-white/10 md:hover:bg-primary md:hover:text-white transition duration-300"
-                      }
-                    `}
-              >
-                Menu
-              </a>
-            </li>
+            {navItems.map((item, index) => (
+              <li key={index}>
+                <a
+                  href={item.href}
+                  className={`
+                    block py-2 px-4 rounded-md transition
+                    ${
+                      scrolled
+                        ? "text-white hover:bg-secondary hover:text-black duration-300"
+                        : "text-white hover:bg-white/10 md:hover:bg-primary md:hover:text-white duration-300"
+                    }
+                  `}
+                >
+                  {item.title}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
