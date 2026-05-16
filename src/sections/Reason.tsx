@@ -3,7 +3,7 @@ import bijiKopiImage from "@/assets/about.png";
 
 export default function Reason() {
   return (
-    <section className="py-20 flex justify-items-stretch bg-white">
+    <section className="py-20 flex justify-items-stretch bg-white" id="reason">
       <div className="w-1/2 flex">
         <div className="w-1/2 bg-primary p-10 flex flex-col justify-center">
           <span className="text-sm uppercase tracking-[0.3em] text-secondary font-medium">
@@ -40,7 +40,7 @@ export default function Reason() {
           <img
             src={bijiKopiImage}
             alt="Second About Image"
-            className="absolute w-30 top-0 -right-8 rotate-40"
+            className="absolute w-30 top-0 -right-2 rotate-40 bg"
           />
           <p className="uppercase tracking-[0.3em] text-sm font-medium">
             Our Promise

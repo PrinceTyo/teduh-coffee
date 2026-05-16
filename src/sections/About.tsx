@@ -1,4 +1,5 @@
 import { CiCoffeeCup } from "react-icons/ci";
+import { LuCroissant } from "react-icons/lu";
 
 export default function About() {
   return (
@@ -45,22 +46,22 @@ export default function About() {
             <CiCoffeeCup className="w-12 h-12" />
           </div>
           <div>
-            <h2 className="text-2xl font-semibold">Title</h2>
+            <h2 className="text-2xl font-semibold">Premium Coffee</h2>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text.
+              Diseduh dari biji kopi pilihan untuk menghadirkan rasa yang kaya,
+              hangat, dan berkesan di setiap tegukan.
             </p>
           </div>
         </div>
         <div className="flex items-center gap-4">
           <div className="bg-secondary rounded-md p-3">
-            <CiCoffeeCup className="w-12 h-12" />
+            <LuCroissant className="w-12 h-12" />
           </div>
           <div>
-            <h2 className="text-2xl font-semibold">Title</h2>
+            <h2 className="text-2xl font-semibold">Fresh Pastry</h2>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text.
+              Pastry hangat dengan tekstur lembut yang dibuat untuk melengkapi
+              momen santaimu bersama kopi favorit.
             </p>
           </div>
         </div>
