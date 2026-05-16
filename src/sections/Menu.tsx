@@ -1,13 +1,6 @@
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { FaStar } from "react-icons/fa";
 import { Separator } from "../components/ui/separator";
-// import baliImage from "@/assets/destinations/bali.jpg";
-// import borobudurImage from "@/assets/destinations/borobudur.jpg";
-// import bromoImage from "@/assets/destinations/bromo.jpg";
-// import komodoImage from "@/assets/destinations/komodo.jpg";
-// import rakumImage from "@/assets/destinations/rakum.jpg";
-// import rampatImage from "@/assets/destinations/rampat.jpg";
-// import ijenImage from "@/assets/destinations/ijen.jpg";
 import {
   Carousel,
   CarouselContent,
@@ -31,7 +24,7 @@ export default function Menu() {
             <span className="uppercase tracking-[0.3em] text-sm font-medium text-primary">
               Our Menu
             </span>
-            <h1 className="text-2xl md:text-4xl font-semibold">
+            <h1 className="max-w-full md:max-w-3/4 lg:max-w-full text-2xl md:text-3xl lg:text-4xl font-semibold">
               Crafted for Every Coffee Lover
             </h1>
           </div>

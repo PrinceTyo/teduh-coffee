@@ -3,9 +3,12 @@ import bijiKopiImage from "@/assets/about.png";
 
 export default function Reason() {
   return (
-    <section className="py-20 flex justify-items-stretch bg-white" id="reason">
-      <div className="w-1/2 flex">
-        <div className="w-1/2 bg-primary p-10 flex flex-col justify-center">
+    <section
+      className="py-20 flex flex-col md:flex-row lg:justify-items-stretch bg-white"
+      id="reason"
+    >
+      <div className="md:w-1/2 flex">
+        <div className="lg:w-1/2 bg-primary p-10 flex flex-col justify-center">
           <span className="text-sm uppercase tracking-[0.3em] text-secondary font-medium">
             Experience
           </span>
@@ -27,7 +30,7 @@ export default function Reason() {
           </a>
         </div>
 
-        <div className="w-1/2">
+        <div className="hidden lg:flex lg:w-1/2">
           <img
             src={reasonImage}
             alt="Reason Image"
@@ -35,12 +38,12 @@ export default function Reason() {
           />
         </div>
       </div>
-      <div className="w-1/2 bg-secondary p-10 text-primary flex flex-col items-center justify-center">
+      <div className="md:w-1/2 bg-secondary p-10 text-primary flex flex-col items-center justify-center">
         <div className="relative">
           <img
             src={bijiKopiImage}
             alt="Second About Image"
-            className="absolute w-30 top-0 -right-2 rotate-40 bg"
+            className="hidden lg:flex absolute w-30 top-0 -right-2 rotate-40 bg"
           />
           <p className="uppercase tracking-[0.3em] text-sm font-medium">
             Our Promise

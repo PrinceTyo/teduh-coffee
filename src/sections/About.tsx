@@ -4,21 +4,21 @@ import { LuCroissant } from "react-icons/lu";
 export default function About() {
   return (
     <section
-      className="px-4 pt-20 lg:px-20 flex items-center justify-between gap-20 bg-white"
+      className="px-4 pt-20 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10 lg:gap-20 bg-white"
       id="about"
     >
-      <div className="relative w-1/2">
+      <div className="relative md:w-1/2">
         <div className="flex gap-6">
           <img
             src="https://i.pinimg.com/736x/21/74/32/2174329b8ef1603c1cbc68bd9ef5865a.jpg"
             alt="About Image"
-            className="w-96 h-136 object-cover"
+            className="w-40 h-136 md:w-50 md:h-146 lg:w-96 lg:h-136 object-cover"
           />
-          <div className="w-56 h-74 text-center bg-primary flex flex-col items-center justify-center text-white p-4 space-y-4">
+          <div className="w-56 h-74 md:h-84 lg:h-74 text-center bg-primary flex flex-col items-center justify-center text-white p-4 space-y-4">
             <h2 className="text-6xl font-bold">10+</h2>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
+              Tahun menghadirkan kopi berkualitas dan suasana hangat untuk
+              setiap momen berharga.
             </p>
           </div>
         </div>
@@ -28,7 +28,7 @@ export default function About() {
           className="absolute w-80 h-56 bottom-0 right-0 object-cover"
         />
       </div>
-      <div className="w-1/2 space-y-6">
+      <div className="md:w-1/2 space-y-6">
         <p className="uppercase tracking-[0.3em] text-sm font-medium text-primary">
           Our Story
         </p>

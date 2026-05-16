@@ -3,7 +3,7 @@ import ctaImage from "@/assets/cta.png";
 export default function Cta() {
   return (
     <div
-      className="relative h-116 lg:h-96 flex items-center justify-start bg-fixed"
+      className="relative h-116 lg:h-96 flex items-center justify-center lg:justify-start bg-fixed"
       style={{
         backgroundImage: `url(${ctaImage})`,
         backgroundSize: "cover",

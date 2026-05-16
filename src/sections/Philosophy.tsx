@@ -8,16 +8,16 @@ import { PiBread, PiCoffeeBold } from "react-icons/pi";
 export default function Philosophy() {
   return (
     <section className="px-4 pb-20 lg:px-20 bg-white" id="philosophy">
-      <div className="relative flex flex-col items-center justify-center space-y-2">
+      <div className="relative flex flex-col items-center justify-center text-center space-y-2">
         <img
           src={bijiKopiImage}
           alt="Second About Image"
-          className="absolute w-30 -top-10 -right-8 rotate-40"
+          className="hidden lg:flex absolute w-30 -top-10 -right-8 rotate-40"
         />
         <img
           src={bijiKopiImage}
           alt="Second About Image"
-          className="absolute w-30 -top-10 -left-8 -rotate-40"
+          className="hidden lg:flex absolute w-30 -top-10 -left-8 -rotate-40"
         />
         <span className="uppercase tracking-[0.3em] text-sm font-medium text-primary">
           what happens here
@@ -27,8 +27,8 @@ export default function Philosophy() {
         </h2>
         <div className="mt-1 w-30 h-1 bg-primary"></div>
       </div>
-      <div className="flex items-center justify-around mt-10">
-        <div className="w-1/3 space-y-12">
+      <div className="flex flex-col md:flex-row items-center justify-around mt-16 md:mt-10 gap-y-10 md:gap-y-0">
+        <div className="md:w-1/3 space-y-8 md:space-y-12">
           <div className="flex items-center text-end gap-6">
             <div className="flex flex-col items-end">
               <h2 className="uppercase font-bold text-xl text-primary">
@@ -84,7 +84,7 @@ export default function Philosophy() {
           <img src={philosophyImage} alt="Philosophy Image" className="h-106" />
         </div>
 
-        <div className="w-1/3 space-y-12">
+        <div className="md:w-1/3 space-y-8 md:space-y-12">
           <div className="flex items-center text-start gap-6">
             <div>
               <MdOutlineCoffeeMaker className="h-16 w-16 text-primary" />
