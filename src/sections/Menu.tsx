@@ -76,7 +76,7 @@ export default function Menu({
               className="pl-1 md:basis-1/2 lg:basis-1/4"
             >
               <div className="p-1">
-                <div className="rounded-lg w-full md:w-80 bg-white shadow-md">
+                <div className="rounded-lg w-full md:w-80 bg-white shadow-md max-w-[98%]">
                   <img
                     src={item.image}
                     alt={item.title}
